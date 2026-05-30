@@ -14,5 +14,11 @@ frc2::CommandPtr SubShooter::StartShooter(){
         [this]{ShooterMotor.Set(0);});
 }
 
+frc2::CommandPtr SubShooter::Intake(){
+        return StartEnd(
+        [this]{ShooterMotor.Set(0.8);},
+        [this]{ShooterMotor.Set(0);});
+}
+
 // This method will be called once per scheduler run
 void SubShooter::Periodic() {}

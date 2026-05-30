@@ -20,8 +20,9 @@ RobotContainer::RobotContainer() {
 }
 
 void RobotContainer::ConfigureBindings() {
-  DriverController.LeftTrigger().WhileTrue(SubIntake::GetInstance().Intake());
-  DriverController.RightTrigger().WhileTrue(SubShooter::GetInstance().StartShooter().AndThen(frc2::cmd::Wait(3_s)).AlongWith( SubIntake::GetInstance().Shoot()));
+  DriverController.LeftTrigger().WhileTrue(SubIntake::GetInstance().Intake().AlongWith(SubShooter::GetInstance().Intake()));
+  DriverController.RightTrigger().WhileTrue(SubShooter::GetInstance().StartShooter());
+  DriverController.LeftBumper().WhileTrue(SubIntake::GetInstance().Shoot());
 }
 
 frc2::CommandPtr RobotContainer::GetAutonomousCommand(){

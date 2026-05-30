@@ -12,6 +12,9 @@ SubDrive::SubDrive(){
     BackLeftDrive.SetNeutralMode(ctre::phoenix::motorcontrol::NeutralMode::Brake);
     BackRightDrive.SetNeutralMode(ctre::phoenix::motorcontrol::NeutralMode::Brake);
 
+    FrontLeftDrive.SetInverted(true);
+    BackLeftDrive.SetInverted(true);
+
     BackLeftDrive.Follow(FrontLeftDrive);
     BackRightDrive.Follow(FrontRightDrive);
     frc::SmartDashboard::PutData("Drivebase", &_drivebase);

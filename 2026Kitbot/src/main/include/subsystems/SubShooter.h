@@ -19,6 +19,7 @@ class SubShooter : public frc2::SubsystemBase {
   }
 
   frc2::CommandPtr StartShooter();
+  frc2::CommandPtr Intake();
 
   /**
    * Will be called periodically whenever the CommandScheduler runs.
