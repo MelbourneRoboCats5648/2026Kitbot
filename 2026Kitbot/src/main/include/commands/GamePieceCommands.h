@@ -7,25 +7,26 @@
 #include <frc2/command/Command.h>
 #include <frc2/command/CommandHelper.h>
 
-#include "subsystems/ExampleSubsystem.h"
-
 /**
- * An example command that uses an example subsystem.
+ * An example command.
  *
  * <p>Note that this extends CommandHelper, rather extending Command
  * directly; this is crucially important, or else the decorator functions in
  * Command will *not* work!
  */
-class ExampleCommand
-    : public frc2::CommandHelper<frc2::Command, ExampleCommand> {
+class GamePieceCommands
+    : public frc2::CommandHelper<frc2::Command, GamePieceCommands> {
  public:
-  /**
-   * Creates a new ExampleCommand.
-   *
-   * @param subsystem The subsystem used by this command.
+  /* You should consider using the more terse Command factories API instead
+   * https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands
    */
-  explicit ExampleCommand(ExampleSubsystem* subsystem);
+  GamePieceCommands();
 
- private:
-  ExampleSubsystem* m_subsystem;
+  void Initialize() override;
+
+  void Execute() override;
+
+  void End(bool interrupted) override;
+
+  bool IsFinished() override;
 };
