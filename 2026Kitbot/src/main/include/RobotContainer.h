@@ -9,6 +9,10 @@
 #include <frc2/command/button/CommandXboxController.h>
 #include <frc2/command/WaitCommand.h>
 
+#include <subsystems/SubDrive.h>
+#include <subsystems/SubIntake.h>
+#include <subsystems/SubShooter.h>
+
 #include "Constants.h"
 
 
@@ -29,4 +33,9 @@ class RobotContainer {
   // Replace with CommandPS4Controller or CommandJoystick if needed
   frc2::CommandXboxController DriverController{0};
   void ConfigureBindings();
+
+  SubDrive m_drive;
+  SubIntake m_intake;
+  SubShooter m_shooter;
+
 };

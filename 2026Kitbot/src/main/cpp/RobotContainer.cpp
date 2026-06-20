@@ -10,6 +10,8 @@
 #include "subsystems/SubIntake.h"
 #include "subsystems/SubShooter.h"
 
+#include "commands/Autos.h"
+
 
 RobotContainer::RobotContainer() {
   // Initialize all of your commands and subsystems here
@@ -26,5 +28,5 @@ void RobotContainer::ConfigureBindings() {
 }
 
 frc2::CommandPtr RobotContainer::GetAutonomousCommand(){
-  return frc2::cmd::None();
+  return Autos::BasicAuto(&m_drive, &m_shooter);
 }
