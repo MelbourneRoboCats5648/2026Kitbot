@@ -25,5 +25,11 @@ frc2::CommandPtr SubDrive::Drive(frc2::CommandXboxController &driverController){
         _drivebase.ArcadeDrive(driverController.GetLeftY(), (driverController.GetLeftX()*0.8));});
 }
 
+frc2::CommandPtr SubDrive::AutoDrive(double xSpeed, double rot) {
+    return Run([this, xSpeed, rot] {
+        _drivebase.ArcadeDrive(xSpeed, rot);
+    });
+}
+
 // This method will be called once per scheduler run
 void SubDrive::Periodic() {}

@@ -22,7 +22,8 @@ class SubDrive : public frc2::SubsystemBase {
   SubDrive();
 
   frc2::CommandPtr Drive(frc2::CommandXboxController &driverController);
-  frc2::CommandPtr AutoDrive();
+
+  frc2::CommandPtr AutoDrive(double xSpeed, double rot);
 
   /**   
    * Will be called periodically whenever the CommandScheduler runs.

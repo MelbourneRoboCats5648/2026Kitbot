@@ -6,8 +6,14 @@
 
 #include <frc2/command/CommandPtr.h>
 
+class SubDrive;
+class SubShooter;
 
-namespace autos {
+namespace Autos {
+
+frc2::CommandPtr BasicAuto(
+    SubDrive* m_drive,
+    SubShooter* m_shooter);
 /**
  * Example static factory for an autonomous command.
  */
